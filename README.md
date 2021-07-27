@@ -1,1 +1,1 @@
-# SEC-Scrape
+# Implement Corner Stone trading strategy
