@@ -1,0 +1,959 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FilingSummary>
+  <Version>3.19.1</Version>
+  <ProcessingTime/>
+  <ReportFormat>html</ReportFormat>
+  <ContextCount>224</ContextCount>
+  <ElementCount>324</ElementCount>
+  <EntityCount>1</EntityCount>
+  <FootnotesReported>false</FootnotesReported>
+  <SegmentCount>73</SegmentCount>
+  <ScenarioCount>0</ScenarioCount>
+  <TuplesReported>false</TuplesReported>
+  <UnitCount>7</UnitCount>
+  <MyReports>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R1.htm</HtmlFileName>
+      <LongName>0001000 - Document - Document and Entity Information</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/DocumentAndEntityInformation</Role>
+      <ShortName>Document and Entity Information</ShortName>
+      <MenuCategory>Cover</MenuCategory>
+      <Position>1</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R2.htm</HtmlFileName>
+      <LongName>1001000 - Statement - Consolidated Balance Sheets</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatedBalanceSheets</Role>
+      <ShortName>Consolidated Balance Sheets</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>2</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R3.htm</HtmlFileName>
+      <LongName>1001501 - Statement - Consolidated Balance Sheets (Parenthetical)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatedBalanceSheetsParenthetical</Role>
+      <ShortName>Consolidated Balance Sheets (Parenthetical)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>3</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R4.htm</HtmlFileName>
+      <LongName>1002000 - Statement - Consolidated Statements of Operations and Comprehensive Income (Loss)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatedStatementsOfOperationsAndComprehensiveIncomeLoss</Role>
+      <ShortName>Consolidated Statements of Operations and Comprehensive Income (Loss)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>4</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R5.htm</HtmlFileName>
+      <LongName>1003000 - Statement - Consolidated Statements of Cash Flows</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatedStatementsOfCashFlows</Role>
+      <ShortName>Consolidated Statements of Cash Flows</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>5</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R6.htm</HtmlFileName>
+      <LongName>1004000 - Statement - Consolidated Statements of Stockholder's (Deficit) Equity</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatedStatementsOfStockholdersDeficitEquity</Role>
+      <ShortName>Consolidated Statements of Stockholder's (Deficit) Equity</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>6</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R7.htm</HtmlFileName>
+      <LongName>2101100 - Disclosure - Basis of Presentation</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/BasisOfPresentation</Role>
+      <ShortName>Basis of Presentation</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>7</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R8.htm</HtmlFileName>
+      <LongName>2102100 - Disclosure - Going Concern</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/GoingConcern</Role>
+      <ShortName>Going Concern</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>8</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R9.htm</HtmlFileName>
+      <LongName>2103100 - Disclosure - Summary of Significant Accounting Policies</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPolicies</Role>
+      <ShortName>Summary of Significant Accounting Policies</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>9</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R10.htm</HtmlFileName>
+      <LongName>2104100 - Disclosure - Recent Accounting Pronouncements</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RecentAccountingPronouncements</Role>
+      <ShortName>Recent Accounting Pronouncements</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>10</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R11.htm</HtmlFileName>
+      <LongName>2105100 - Disclosure - Revenue Recognition</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognition</Role>
+      <ShortName>Revenue Recognition</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>11</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R12.htm</HtmlFileName>
+      <LongName>2106100 - Disclosure - Property and Equipment</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/PropertyAndEquipment</Role>
+      <ShortName>Property and Equipment</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>12</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R13.htm</HtmlFileName>
+      <LongName>2107100 - Disclosure - Goodwill</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/Goodwill</Role>
+      <ShortName>Goodwill</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>13</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R14.htm</HtmlFileName>
+      <LongName>2108100 - Disclosure - Other Accrued Liabilities</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/OtherAccruedLiabilities</Role>
+      <ShortName>Other Accrued Liabilities</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>14</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R15.htm</HtmlFileName>
+      <LongName>2109100 - Disclosure - Long-Term Debt</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/LongTermDebt</Role>
+      <ShortName>Long-Term Debt</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>15</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R16.htm</HtmlFileName>
+      <LongName>2110100 - Disclosure - Derivatives</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/Derivatives</Role>
+      <ShortName>Derivatives</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>16</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R17.htm</HtmlFileName>
+      <LongName>2111100 - Disclosure - Fair Value Measurements</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/FairValueMeasurements</Role>
+      <ShortName>Fair Value Measurements</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>17</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R18.htm</HtmlFileName>
+      <LongName>2112100 - Disclosure - Income Taxes</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxes</Role>
+      <ShortName>Income Taxes</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>18</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R19.htm</HtmlFileName>
+      <LongName>2113100 - Disclosure - Stock-based and Long-Term Compensation</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockBasedAndLongTermCompensation</Role>
+      <ShortName>Stock-based and Long-Term Compensation</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>19</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R20.htm</HtmlFileName>
+      <LongName>2114100 - Disclosure - Stockholder's Equity</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockholdersEquity</Role>
+      <ShortName>Stockholder's Equity</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>20</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R21.htm</HtmlFileName>
+      <LongName>2115100 - Disclosure - Employee Benefit Plans</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/EmployeeBenefitPlans</Role>
+      <ShortName>Employee Benefit Plans</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>21</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R22.htm</HtmlFileName>
+      <LongName>2116100 - Disclosure - Commitments, Contingencies and Other Liabilities</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilities</Role>
+      <ShortName>Commitments, Contingencies and Other Liabilities</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>22</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R23.htm</HtmlFileName>
+      <LongName>2117100 - Disclosure - Quarterly Financial Information (Unaudited - see accompanying accountants' report)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/QuarterlyFinancialInformationUnauditedSeeAccompanyingAccountantsReport</Role>
+      <ShortName>Quarterly Financial Information (Unaudited - see accompanying accountants' report)</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>23</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R24.htm</HtmlFileName>
+      <LongName>2118100 - Disclosure - Consolidating Guarantor Financial Information</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatingGuarantorFinancialInformation</Role>
+      <ShortName>Consolidating Guarantor Financial Information</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>24</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R25.htm</HtmlFileName>
+      <LongName>2119100 - Disclosure - Subsequent Events</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SubsequentEvents</Role>
+      <ShortName>Subsequent Events</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>25</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R26.htm</HtmlFileName>
+      <LongName>2203201 - Disclosure - Summary of Significant Accounting Policies (Policies)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesPolicies</Role>
+      <ShortName>Summary of Significant Accounting Policies (Policies)</ShortName>
+      <MenuCategory>Policies</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/SummaryOfSignificantAccountingPolicies</ParentRole>
+      <Position>26</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R27.htm</HtmlFileName>
+      <LongName>2303302 - Disclosure - Summary of Significant Accounting Policies (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesTables</Role>
+      <ShortName>Summary of Significant Accounting Policies (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/SummaryOfSignificantAccountingPolicies</ParentRole>
+      <Position>27</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R28.htm</HtmlFileName>
+      <LongName>2305301 - Disclosure - Revenue Recognition (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionTables</Role>
+      <ShortName>Revenue Recognition (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/RevenueRecognition</ParentRole>
+      <Position>28</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R29.htm</HtmlFileName>
+      <LongName>2306301 - Disclosure - Property and Equipment (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/PropertyAndEquipmentTables</Role>
+      <ShortName>Property and Equipment (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/PropertyAndEquipment</ParentRole>
+      <Position>29</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R30.htm</HtmlFileName>
+      <LongName>2307301 - Disclosure - Goodwill (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/GoodwillTables</Role>
+      <ShortName>Goodwill (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/Goodwill</ParentRole>
+      <Position>30</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R31.htm</HtmlFileName>
+      <LongName>2308301 - Disclosure - Other Accrued Liabilities (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/OtherAccruedLiabilitiesTables</Role>
+      <ShortName>Other Accrued Liabilities (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/OtherAccruedLiabilities</ParentRole>
+      <Position>31</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R32.htm</HtmlFileName>
+      <LongName>2309301 - Disclosure - Long-Term Debt (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/LongTermDebtTables</Role>
+      <ShortName>Long-Term Debt (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/LongTermDebt</ParentRole>
+      <Position>32</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R33.htm</HtmlFileName>
+      <LongName>2310301 - Disclosure - Derivatives (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/DerivativesTables</Role>
+      <ShortName>Derivatives (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/Derivatives</ParentRole>
+      <Position>33</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R34.htm</HtmlFileName>
+      <LongName>2311301 - Disclosure - Fair Value Measurements (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/FairValueMeasurementsTables</Role>
+      <ShortName>Fair Value Measurements (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/FairValueMeasurements</ParentRole>
+      <Position>34</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R35.htm</HtmlFileName>
+      <LongName>2312301 - Disclosure - Income Taxes (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesTables</Role>
+      <ShortName>Income Taxes (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/IncomeTaxes</ParentRole>
+      <Position>35</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R36.htm</HtmlFileName>
+      <LongName>2313301 - Disclosure - Stock-based and Long-Term Compensation (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockBasedAndLongTermCompensationTables</Role>
+      <ShortName>Stock-based and Long-Term Compensation (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/StockBasedAndLongTermCompensation</ParentRole>
+      <Position>36</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R37.htm</HtmlFileName>
+      <LongName>2314301 - Disclosure - Stockholder's Equity (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockholdersEquityTables</Role>
+      <ShortName>Stockholder's Equity (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/StockholdersEquity</ParentRole>
+      <Position>37</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R38.htm</HtmlFileName>
+      <LongName>2316301 - Disclosure - Commitments, Contingencies and Other Liabilities (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilitiesTables</Role>
+      <ShortName>Commitments, Contingencies and Other Liabilities (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilities</ParentRole>
+      <Position>38</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R39.htm</HtmlFileName>
+      <LongName>2317301 - Disclosure - Quarterly Financial Information (Unaudited - see accompanying accountants' report)) (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/QuarterlyFinancialInformationUnauditedSeeAccompanyingAccountantsReportTables</Role>
+      <ShortName>Quarterly Financial Information (Unaudited - see accompanying accountants' report)) (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/QuarterlyFinancialInformationUnauditedSeeAccompanyingAccountantsReport</ParentRole>
+      <Position>39</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R40.htm</HtmlFileName>
+      <LongName>2318301 - Disclosure - Consolidating Guarantor Financial Information (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/ConsolidatingGuarantorFinancialInformationTables</Role>
+      <ShortName>Consolidating Guarantor Financial Information (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/ConsolidatingGuarantorFinancialInformation</ParentRole>
+      <Position>40</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R41.htm</HtmlFileName>
+      <LongName>2401401 - Disclosure - Basis of Presentation - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/BasisOfPresentationNarrativeDetails</Role>
+      <ShortName>Basis of Presentation - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>41</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R42.htm</HtmlFileName>
+      <LongName>2402401 - Disclosure - Going Concern - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/GoingConcernNarrativeDetails</Role>
+      <ShortName>Going Concern - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>42</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R43.htm</HtmlFileName>
+      <LongName>2403403 - Disclosure - Summary of Significant Accounting Policies - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesNarrativeDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>43</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R44.htm</HtmlFileName>
+      <LongName>2403404 - Disclosure - Summary of Significant Accounting Policies - Roll Forward of Receivable Allowance (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesRollForwardOfReceivableAllowanceDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Roll Forward of Receivable Allowance (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>44</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R45.htm</HtmlFileName>
+      <LongName>2403405 - Disclosure - Summary of Significant Accounting Policies - Property Plant and Equipment Useful Life (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesPropertyPlantAndEquipmentUsefulLifeDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Property Plant and Equipment Useful Life (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>45</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R46.htm</HtmlFileName>
+      <LongName>2403406 - Disclosure - Summary of Significant Accounting Policies - Expected Subscriber Fees (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/SummaryOfSignificantAccountingPoliciesExpectedSubscriberFeesDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Expected Subscriber Fees (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>46</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R47.htm</HtmlFileName>
+      <LongName>2405402 - Disclosure - Revenue Recognition - Disaggregated Revenue by Source (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionDisaggregatedRevenueBySourceDetails</Role>
+      <ShortName>Revenue Recognition - Disaggregated Revenue by Source (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>47</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R48.htm</HtmlFileName>
+      <LongName>2405403 - Disclosure - Revenue Recognition - Contract Balances (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionContractBalancesDetails</Role>
+      <ShortName>Revenue Recognition - Contract Balances (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>48</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R49.htm</HtmlFileName>
+      <LongName>2405404 - Disclosure - Revenue Recognition - Impact on Condensed Consolidated Balance Sheets (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionImpactOnCondensedConsolidatedBalanceSheetsDetails</Role>
+      <ShortName>Revenue Recognition - Impact on Condensed Consolidated Balance Sheets (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>49</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R50.htm</HtmlFileName>
+      <LongName>2405405 - Disclosure - Revenue Recognition - Impact on Condensed Consolidated Statements of Operations and Comprehensive Income (Loss) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionImpactOnCondensedConsolidatedStatementsOfOperationsAndComprehensiveIncomeLossDetails</Role>
+      <ShortName>Revenue Recognition - Impact on Condensed Consolidated Statements of Operations and Comprehensive Income (Loss) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>50</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R51.htm</HtmlFileName>
+      <LongName>2405406 - Disclosure - Revenue Recognition - Impact on Condensed Consolidated Statement of Cash Flows (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/RevenueRecognitionImpactOnCondensedConsolidatedStatementOfCashFlowsDetails</Role>
+      <ShortName>Revenue Recognition - Impact on Condensed Consolidated Statement of Cash Flows (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>51</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R52.htm</HtmlFileName>
+      <LongName>2406402 - Disclosure - Property and Equipment - Schedule of Property and Equipment (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/PropertyAndEquipmentScheduleOfPropertyAndEquipmentDetails</Role>
+      <ShortName>Property and Equipment - Schedule of Property and Equipment (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>52</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R53.htm</HtmlFileName>
+      <LongName>2406403 - Disclosure - Property and Equipment - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/PropertyAndEquipmentNarrativeDetails</Role>
+      <ShortName>Property and Equipment - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>53</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R54.htm</HtmlFileName>
+      <LongName>2407402 - Disclosure - Goodwill - Schedule of Goodwill (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/GoodwillScheduleOfGoodwillDetails</Role>
+      <ShortName>Goodwill - Schedule of Goodwill (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>54</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R55.htm</HtmlFileName>
+      <LongName>2407403 - Disclosure - Goodwill - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/GoodwillNarrativeDetails</Role>
+      <ShortName>Goodwill - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>55</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R56.htm</HtmlFileName>
+      <LongName>2408402 - Disclosure - Other Accrued Liabilities - Schedule of other accrued liabilities (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/OtherAccruedLiabilitiesScheduleOfOtherAccruedLiabilitiesDetails</Role>
+      <ShortName>Other Accrued Liabilities - Schedule of other accrued liabilities (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>56</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R57.htm</HtmlFileName>
+      <LongName>2409402 - Disclosure - Long-Term Debt - Schedule of Long Term Debt (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/LongTermDebtScheduleOfLongTermDebtDetails</Role>
+      <ShortName>Long-Term Debt - Schedule of Long Term Debt (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>57</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R58.htm</HtmlFileName>
+      <LongName>2409403 - Disclosure - Long-Term Debt - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/LongTermDebtNarrativeDetails</Role>
+      <ShortName>Long-Term Debt - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>58</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R59.htm</HtmlFileName>
+      <LongName>2409404 - Disclosure - Long-Term Debt - Schedule of Long Term Debt Maturity (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/LongTermDebtScheduleOfLongTermDebtMaturityDetails</Role>
+      <ShortName>Long-Term Debt - Schedule of Long Term Debt Maturity (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>59</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R60.htm</HtmlFileName>
+      <LongName>2410402 - Disclosure - Derivatives - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/DerivativesNarrativeDetails</Role>
+      <ShortName>Derivatives - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>60</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R61.htm</HtmlFileName>
+      <LongName>2410403 - Disclosure - Derivatives - Summary of Outstanding Swaps (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/DerivativesSummaryOfOutstandingSwapsDetails</Role>
+      <ShortName>Derivatives - Summary of Outstanding Swaps (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>61</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R62.htm</HtmlFileName>
+      <LongName>2410404 - Disclosure - Derivatives - Summary of Derivatives Designated as Cash Flow Hedges (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/DerivativesSummaryOfDerivativesDesignatedAsCashFlowHedgesDetails</Role>
+      <ShortName>Derivatives - Summary of Derivatives Designated as Cash Flow Hedges (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>62</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R63.htm</HtmlFileName>
+      <LongName>2411402 - Disclosure - Fair Value Measurements - Schedule of Fair Value Measured On Recurring Basis (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/FairValueMeasurementsScheduleOfFairValueMeasuredOnRecurringBasisDetails</Role>
+      <ShortName>Fair Value Measurements - Schedule of Fair Value Measured On Recurring Basis (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>63</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R64.htm</HtmlFileName>
+      <LongName>2411403 - Disclosure - Fair Value Measurements - Schedule of Instruments Not Carried at Fair Value (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/FairValueMeasurementsScheduleOfInstrumentsNotCarriedAtFairValueDetails</Role>
+      <ShortName>Fair Value Measurements - Schedule of Instruments Not Carried at Fair Value (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>64</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R65.htm</HtmlFileName>
+      <LongName>2412402 - Disclosure - Income Taxes - Schedule of Components of Income Tax (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesScheduleOfComponentsOfIncomeTaxDetails</Role>
+      <ShortName>Income Taxes - Schedule of Components of Income Tax (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>65</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R66.htm</HtmlFileName>
+      <LongName>2412403 - Disclosure - Income Taxes - Schedule of Effective Income Tax Reconciliation (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesScheduleOfEffectiveIncomeTaxReconciliationDetails</Role>
+      <ShortName>Income Taxes - Schedule of Effective Income Tax Reconciliation (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>66</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R67.htm</HtmlFileName>
+      <LongName>2412404 - Disclosure - Income Taxes - Schedule of Deferred Tax Assets and Liabilities (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesScheduleOfDeferredTaxAssetsAndLiabilitiesDetails</Role>
+      <ShortName>Income Taxes - Schedule of Deferred Tax Assets and Liabilities (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>67</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R68.htm</HtmlFileName>
+      <LongName>2412405 - Disclosure - Income Taxes - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesNarrativeDetails</Role>
+      <ShortName>Income Taxes - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>68</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R69.htm</HtmlFileName>
+      <LongName>2412406 - Disclosure - Income Taxes - Schedule of Unrecognized Tax Benefit Roll-Forward (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/IncomeTaxesScheduleOfUnrecognizedTaxBenefitRollForwardDetails</Role>
+      <ShortName>Income Taxes - Schedule of Unrecognized Tax Benefit Roll-Forward (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>69</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R70.htm</HtmlFileName>
+      <LongName>2413402 - Disclosure - Stock-based and Long-Term Compensation - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockBasedAndLongTermCompensationNarrativeDetails</Role>
+      <ShortName>Stock-based and Long-Term Compensation - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>70</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R71.htm</HtmlFileName>
+      <LongName>2413403 - Disclosure - Stock-based and Long-Term Compensation - Schedule of Option Activity (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockBasedAndLongTermCompensationScheduleOfOptionActivityDetails</Role>
+      <ShortName>Stock-based and Long-Term Compensation - Schedule of Option Activity (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>71</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R72.htm</HtmlFileName>
+      <LongName>2413404 - Disclosure - Stock-based and Long-Term Compensation - Schedule of Unvested Restricted Stock Awards and Restricted Stock Units (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockBasedAndLongTermCompensationScheduleOfUnvestedRestrictedStockAwardsAndRestrictedStockUnitsDetails</Role>
+      <ShortName>Stock-based and Long-Term Compensation - Schedule of Unvested Restricted Stock Awards and Restricted Stock Units (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>72</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R73.htm</HtmlFileName>
+      <LongName>2414402 - Disclosure - Stockholder's Equity - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockholdersEquityNarrativeDetails</Role>
+      <ShortName>Stockholder's Equity - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>73</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R74.htm</HtmlFileName>
+      <LongName>2414403 - Disclosure - Stockholder's Equity - Roll Forward Activity (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/StockholdersEquityRollForwardActivityDetails</Role>
+      <ShortName>Stockholder's Equity - Roll Forward Activity (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>74</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R75.htm</HtmlFileName>
+      <LongName>2415401 - Disclosure - Employee Benefit Plans - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/EmployeeBenefitPlansNarrativeDetails</Role>
+      <ShortName>Employee Benefit Plans - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>75</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R76.htm</HtmlFileName>
+      <LongName>2416402 - Disclosure - Commitments, Contingencies and Other Liabilities - Summary of Future Minimum Lease Payments (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilitiesSummaryOfFutureMinimumLeasePaymentsDetails</Role>
+      <ShortName>Commitments, Contingencies and Other Liabilities - Summary of Future Minimum Lease Payments (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>76</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R77.htm</HtmlFileName>
+      <LongName>2416403 - Disclosure - Commitments, Contingencies and Other Liabilities - Narrative (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilitiesNarrativeDetails</Role>
+      <ShortName>Commitments, Contingencies and Other Liabilities - Narrative (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/CommitmentsContingenciesAndOtherLiabilitiesTables</ParentRole>
+      <Position>77</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R78.htm</HtmlFileName>
+      <LongName>2417402 - Disclosure - Quarterly Financial Information (Unaudited - see accompanying accountants' report) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/QuarterlyFinancialInformationUnauditedSeeAccompanyingAccountantsReportDetails</Role>
+      <ShortName>Quarterly Financial Information (Unaudited - see accompanying accountants' report) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <ParentRole>http://www.monitronics.com/role/QuarterlyFinancialInformationUnauditedSeeAccompanyingAccountantsReportTables</ParentRole>
+      <Position>78</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R79.htm</HtmlFileName>
+      <LongName>2418402 - Disclosure - Condensed Consolidating Balance Sheet (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CondensedConsolidatingBalanceSheetDetails</Role>
+      <ShortName>Condensed Consolidating Balance Sheet (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>79</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R80.htm</HtmlFileName>
+      <LongName>2418403 - Disclosure - Condensed Consolidating Statement of Operations and Comprehensive Income (Loss) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CondensedConsolidatingStatementOfOperationsAndComprehensiveIncomeLossDetails</Role>
+      <ShortName>Condensed Consolidating Statement of Operations and Comprehensive Income (Loss) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>80</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R81.htm</HtmlFileName>
+      <LongName>2418404 - Disclosure - Condensed Consolidating Statements of Cash Flows (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.monitronics.com/role/CondensedConsolidatingStatementsOfCashFlowsDetails</Role>
+      <ShortName>Condensed Consolidating Statements of Cash Flows (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>81</Position>
+    </Report>
+    <Report instance="mtii-20181231.xml">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R9999.htm</HtmlFileName>
+      <LongName>Uncategorized Items - mtii-20181231.xml</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://xbrl.sec.gov/role/uncategorizedFacts</Role>
+      <ShortName>Uncategorized Items - mtii-20181231.xml</ShortName>
+      <MenuCategory>Cover</MenuCategory>
+      <Position>82</Position>
+    </Report>
+    <Report>
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <LongName>All Reports</LongName>
+      <ReportType>Book</ReportType>
+      <ShortName>All Reports</ShortName>
+    </Report>
+  </MyReports>
+  <InputFiles>
+    <File>mtii-20181231.xml</File>
+    <File>mtii-20181231.xsd</File>
+    <File>mtii-20181231_cal.xml</File>
+    <File>mtii-20181231_def.xml</File>
+    <File>mtii-20181231_lab.xml</File>
+    <File>mtii-20181231_pre.xml</File>
+  </InputFiles>
+  <SupplementalFiles/>
+  <BaseTaxonomies>
+    <BaseTaxonomy>http://xbrl.sec.gov/invest/2013-01-31</BaseTaxonomy>
+    <BaseTaxonomy>http://fasb.org/us-gaap/2018-01-31</BaseTaxonomy>
+    <BaseTaxonomy>http://xbrl.sec.gov/dei/2018-01-31</BaseTaxonomy>
+    <BaseTaxonomy>http://fasb.org/srt/2018-01-31</BaseTaxonomy>
+  </BaseTaxonomies>
+  <HasPresentationLinkbase>true</HasPresentationLinkbase>
+  <HasCalculationLinkbase>true</HasCalculationLinkbase>
+</FilingSummary>
