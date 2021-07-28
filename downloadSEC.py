@@ -13,8 +13,8 @@ type = '10-K'
 mypath = f"Data\Prices\{year}\\"
 Symbols = [f.split('.')[0] for f in listdir(mypath) if isfile(join(mypath, f))]
 
-Symbols = Symbols[29:]
-#Symbols = ['ALTO']
+Symbols = Symbols[112:]
+#Symbols = ['ARCB']
 
 dateb = str(year+1)+'0101'
 
@@ -124,7 +124,7 @@ for i, ticker in enumerate(Symbols):
             
             #----------Get complete submission text file--------------
             print('-'*100)  
-            print(f"Getting specific document URL for {ticker}")
+            print(f"Getting file link for {ticker}")
 
             doc_link = master_list[0]['links']['documents'] #filing detail page URL
             content = utilities.get_url(doc_link,'content')
@@ -136,29 +136,33 @@ for i, ticker in enumerate(Symbols):
             file_link = base_url_sec + file_href['href']
             print(file_link)
 
-            print(f"Downloading Filing Summary.xml for {ticker}")
-            # documents_url = file_link.replace('-','').replace('.txt','/index.json')
-            # json_url = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['index.json'])
-            # content = utilities.get_url(json_url)
-            # for file in content['directory']['item']:
-            #     # Grab the filing summary and create a new url leading to the file so we can download it.
-            #     if file['name'] == 'FilingSummary.xml':
-            #         xml_summary = base_url_sec + content['directory']['name'] + "/" + file['name']
-            #         print('Filing Summary URL: ' + xml_summary)
-            xml_summary = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['FilingSummary.xml'])
-            print('Filing Summary URL: ' + xml_summary)
-            
-            content_summary = utilities.get_url(xml_summary,'content')
-            f = open(f"Data\Filing Summaries\{year}\\"+ticker+".xml", "wb")
-            f.write(content_summary)
-            f.close()
-            
-            base_url_summary = xml_summary.replace('FilingSummary.xml','')
-            f = open(f"Data\Filing Summaries\{year}\\"+ticker+"_url.txt", "w")
-            f.write(base_url_summary)
-            f.close()
+            print(f"Checking if Filing Summary is available for {ticker}")
+            json_url = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['index.json'])
+            content_json = utilities.get_url(json_url)
+            summary_found = False
+            for file in content_json['directory']['item']:
+                # Grab the filing summary and create a new url leading to the file so we can download it.
+                if file['name'] == 'FilingSummary.xml':
+                    summary_found = True
+                    xml_summary = base_url_sec + content_json['directory']['name'] + "/" + file['name']
+                    #xml_summary = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['FilingSummary.xml'])
+                    print('Filing Summary URL: ' + xml_summary)
+                                        
+                    print(f"Downloading Filing Summary.xml for {ticker}")
+                    content_summary = utilities.get_url(xml_summary,'content')
+                    f = open(f"Data\Filing Summaries\{year}\\"+ticker+".xml", "wb")
+                    f.write(content_summary)
+                    f.close()
+                    
+                    base_url_summary = xml_summary.replace('FilingSummary.xml','')
+                    f = open(f"Data\Filing Summaries\{year}\\"+ticker+"_url.txt", "w")
+                    f.write(base_url_summary)
+                    f.close()
 
-            print(f'Successfully downloaded filing summary for {ticker}!')
+                    print(f'Successfully downloaded filing summary for {ticker}!')
+                    break
+            if not summary_found:
+                print(f'No Filing Summary found for {ticker}!')
         else:
             print(f'No data found for {ticker} in {year}!')
     else:
