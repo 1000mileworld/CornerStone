@@ -5,7 +5,9 @@ from bs4 import BeautifulSoup
 import json
 import time
 
-Symbols = ['AAPL']
+Symbols = ['MSFT','AMZN']
+year = 2015
+dateb = str(year+1)+'0101'
 
 cikMap = utilities.load_obj("cik_map")
 #base_url = r"https://www.sec.gov/Archives/edgar/data"
@@ -18,7 +20,7 @@ for ticker in Symbols:
         param_dict = {'action':'getcompany',
               'CIK': cik_num,
               'type':'10-k',
-              'dateb':'20160101',
+              'dateb':dateb,
               'owner':'exclude',
               'start':'',
               'output':'',
@@ -116,11 +118,24 @@ for ticker in Symbols:
         file_link = base_url_sec + file_href['href']
         print(file_link)
 
-        print(f"Getting Filing Summary.xml URL for {ticker}")
-        documents_url = file_link.replace('-','').replace('.txt','/index.json')
-        content = utilities.get_url(documents_url)
-        for file in content['directory']['item']:
-            # Grab the filing summary and create a new url leading to the file so we can download it.
-            if file['name'] == 'FilingSummary.xml':
-                xml_summary = base_url_sec + content['directory']['name'] + "/" + file['name']
-                print(xml_summary)
+        print(f"Downloading Filing Summary.xml for {ticker}")
+        # documents_url = file_link.replace('-','').replace('.txt','/index.json')
+        # json_url = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['index.json'])
+        # content = utilities.get_url(json_url)
+        # for file in content['directory']['item']:
+        #     # Grab the filing summary and create a new url leading to the file so we can download it.
+        #     if file['name'] == 'FilingSummary.xml':
+        #         xml_summary = base_url_sec + content['directory']['name'] + "/" + file['name']
+        #         print('Filing Summary URL: ' + xml_summary)
+        xml_summary = 'https://'+'/'.join(file_link.split('//')[1].split('/')[:-1]+['FilingSummary.xml'])
+        print('Filing Summary URL: ' + xml_summary)
+        
+        content_summary = utilities.get_url(xml_summary,'content')
+        f = open(f"Data\Filing Summaries\{year}\\"+ticker+".xml", "wb")
+        f.write(content_summary)
+        f.close()
+        
+        base_url_summary = xml_summary.replace('FilingSummary.xml','')
+        f = open(f"Data\Filing Summaries\{year}\\"+ticker+"_url.txt", "w")
+        f.write(base_url_summary)
+        f.close()
