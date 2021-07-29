@@ -6,12 +6,12 @@ import requests
 import io
 import json
 
-year = 2015
+year = 2020
 
 startDate = datetime.datetime(year,1,1)
 endDate = datetime.datetime(year+1,1,1)
 
-root = 'D:\Joe\Investing\Algo Trading\Python\CornerStone'
+#root = 'D:\Joe\Investing\Algo Trading\Python\CornerStone'
 
 # url="https://pkgstore.datahub.io/core/nasdaq-listings/nasdaq-listed_csv/data/7665719fb51081ba0bd834fde71ce822/nasdaq-listed_csv.csv"
 # s = requests.get(url).content
@@ -19,14 +19,14 @@ root = 'D:\Joe\Investing\Algo Trading\Python\CornerStone'
 
 nasdaq = pd.read_csv("nasdaq_screener.csv")
 Symbols = nasdaq['Symbol'].tolist()
-#Symbols = Symbols[302:]
+Symbols = Symbols[2239:]
 
-#Symbols = ['AKO/A','AAPL']
+#Symbols = ['HMPT']
 
 for i,symbol in enumerate(Symbols):  
     
+    symbol = symbol.strip()
     print(f'Downloading stock {i+1} of {len(Symbols)} ({symbol})')
-
     if not symbol.isalpha():
         print(f'Skipping {symbol}: symbol contains nonalpha characters')
         continue
@@ -37,7 +37,7 @@ for i,symbol in enumerate(Symbols):
     else:
         hist = yf.download(symbol,start=startDate,end=endDate,progress=False)
         if len(hist)!=0:
-            hist.to_csv(f'{root}\Data\Prices\{year}\{symbol}.csv')
+            hist.to_csv(f'Data\Prices\{year}\{symbol}.csv')
 
     time.sleep(2)
 
