@@ -1,21 +1,20 @@
-# Check if report links exist for the report types desired
-from utilities import load_obj
+# Check if report links exist for the report types desired and save
+from utilities import load_obj, save_obj
 
-year = 2015
-save_path = f"Data\Reports\{year}\\"
 ticker_info = load_obj('ticker_info')
 
 report_types = ['balance','income','cash flow','equity']
 #report_types = ['equity']
+report_urls = {}
 
-report_list = [
-    r"Consolidated Balance Sheets",
-    r"Consolidated Statements of Operations and Comprehensive Income (Loss)",
-    r"Consolidated Statements of Cash Flows",
-    r"Consolidated Statements of Stockholder's (Deficit) Equity"
-    ]
-for i in range(len(report_list)):
-    report_list[i] = report_list[i].upper()
+# report_list = [
+#     r"Consolidated Balance Sheets",
+#     r"Consolidated Statements of Operations and Comprehensive Income (Loss)",
+#     r"Consolidated Statements of Cash Flows",
+#     r"Consolidated Statements of Stockholder's (Deficit) Equity"
+#     ]
+# for i in range(len(report_list)):
+#     report_list[i] = report_list[i].upper()
 
 Symbols = []
 for item in list(ticker_info.items()):
@@ -28,6 +27,7 @@ for i, ticker in enumerate(Symbols):
     print('-'*100)
     print(f'Getting reports for {i+1} of {len(Symbols)} tickers ({ticker}): '+ticker_info[ticker]['base_url']+'FilingSummary.xml\n') 
     url_check[ticker] = {}
+    report_urls[ticker] = {}
     for type in report_types:
         url_check[ticker][type] = 0
         if type=='balance':
@@ -75,6 +75,7 @@ for i, ticker in enumerate(Symbols):
                     if not any(word in name_long for word in forbidden) and "STATEMENT" in name_long:
                         if url_check[ticker][type]<1:
                             print(report_dict['name_short']+': '+report_dict['url'])
+                            report_urls[ticker][type] = report_dict['url']
                             url_check[ticker][type]+=1
         else:
             print(f'Unrecognized report type requested for {ticker}: {type}')
@@ -97,3 +98,5 @@ for ticker in url_check:
 
 if not error_found:
     print("No errors found!")
+
+save_obj(report_urls,"report_urls")
