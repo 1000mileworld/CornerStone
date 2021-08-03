@@ -43,6 +43,8 @@ def parse_10k(s_data, save_path, type):
 #make array of files in directory for easier debugging
 files = listdir(load_path)
 
+files = files[22:]
+
 statements_data = []
 for i, file in enumerate(files):
     print(f'Parsing {i+1} of {len(files)} files: '+file)
@@ -65,8 +67,21 @@ for i, file in enumerate(files):
             cols = row.find_all('td')
             # if it's a regular row and not a section or a table header (no th or strong tags)
             if (len(row.find_all('th')) == 0 and len(row.find_all('strong')) == 0): 
-                reg_row = [ele.text.strip() for ele in cols] # see list comprehension for syntax
+                #reg_row = [ele.text.strip() for ele in cols] # see list comprehension for syntax
+                reg_row = []
+                for ele in cols:
+                    #if not ele['class'][0]=='pl' and not ele['class'][0]=='nump':
+                    if ele.has_attr('class'):
+                        if ele['class'][0]=='fn':
+                            continue
+                    else:
+                        continue
+                    soup = BeautifulSoup(str(ele),'lxml')
+                    for tag in soup.find_all('span'):
+                        tag.replaceWith('')
+                    reg_row.append(soup.text.strip())
                 s_data['data'].append(reg_row)
+
             
             # if it's a regular row and a section but not a table header
             elif (len(row.find_all('th')) == 0 and len(row.find_all('strong')) != 0):
