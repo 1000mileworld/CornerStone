@@ -14,7 +14,8 @@ def parse_10k(s_data, save_path, type):
     data = s_data['data']
     df = pd.DataFrame(data)
     
-    if type=='income' or type=='cash flow':
+    #if type=='income' or type=='cash flow':
+    if len(s_data['headers'])>1:
         headers = s_data['headers'][1] #use 2nd row from table as headers
     else:
         headers = s_data['headers'][0][1:] #first element is index name, not a header
@@ -30,7 +31,10 @@ def parse_10k(s_data, save_path, type):
             .replace( '', 'NaN', regex=True)
 
     # everything is a string, so let's convert all the data to a float.
-    df = df.astype(float)
+    try:
+        df = df.astype(float)
+    except ValueError:
+        print("Could not convert a value to float, saved all as string type.")
 
     # Change the column headers
     df.columns = headers
@@ -43,8 +47,8 @@ def parse_10k(s_data, save_path, type):
 #make array of files in directory for easier debugging
 files = listdir(load_path)
 
-files = files[22:]
-
+files = files[809:]
+#files = ["ARTW_equity.html"]
 statements_data = []
 for i, file in enumerate(files):
     print(f'Parsing {i+1} of {len(files)} files: '+file)
@@ -70,16 +74,24 @@ for i, file in enumerate(files):
                 #reg_row = [ele.text.strip() for ele in cols] # see list comprehension for syntax
                 reg_row = []
                 for ele in cols:
-                    #if not ele['class'][0]=='pl' and not ele['class'][0]=='nump':
                     if ele.has_attr('class'):
-                        if ele['class'][0]=='fn':
+                        keywords = ['pl','nump','num','text']
+                        if not any(keyword in ele['class'][0] for keyword in keywords):   
+                        #if not ele['class'][0]=='pl' and not ele['class'][0]=='nump':
+                        #if ele['class'][0]=='fn':
                             continue
                     else:
                         continue
+                    
                     soup = BeautifulSoup(str(ele),'lxml')
                     for tag in soup.find_all('span'):
                         tag.replaceWith('')
-                    reg_row.append(soup.text.strip())
+                    
+                    s = soup.text.strip()
+                    if '%' in s:
+                        if len(reg_row)>0: # check it's not leftmost col (row "header")
+                            s = float(s.split('%')[0])/100
+                    reg_row.append(s)
                 s_data['data'].append(reg_row)
 
             
