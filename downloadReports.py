@@ -5,14 +5,15 @@ from json import load
 from requests.api import get
 from utilities import load_obj, get_url
 
-year = 2015
+year = 2016
+load_path = "Data\Objects\\"
 save_path = f"Data\Reports\{year}\\"
 
-report_urls = load_obj("report_urls")
+report_urls = load_obj(f'{load_path}report_urls_{year}')
 Symbols = list(report_urls.keys())
 
-#print(Symbols)
-Symbols = ['AAPL']
+#Symbols = Symbols[2410:]
+#Symbols = ['AAPL']
 for i,ticker in enumerate(Symbols):
     print('-'*100)
     print(f'Downloading reports for {i+1} of {len(Symbols)} tickers ({ticker})...')

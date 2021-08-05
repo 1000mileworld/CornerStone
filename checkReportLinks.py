@@ -1,7 +1,11 @@
 # Check if report links exist for the report types desired and save
 from utilities import load_obj, save_obj
 
-ticker_info = load_obj('ticker_info')
+year = 2016
+load_path = "Data\Objects\\"
+save_path = load_path
+
+ticker_info = load_obj(f'{load_path}ticker_info_{year}')
 
 report_types = ['balance','income','cash flow','equity']
 #report_types = ['equity']
@@ -21,7 +25,7 @@ for item in list(ticker_info.items()):
     Symbols.append(item[0])
 
 #Symbols = Symbols[:3]
-#Symbols = ['ENBL']
+#Symbols = ['CHCT']
 url_check = {}
 for i, ticker in enumerate(Symbols):
     print('-'*100)
@@ -33,34 +37,36 @@ for i, ticker in enumerate(Symbols):
         if type=='balance':
             for report_dict in ticker_info[ticker]['reports']:
                 name_long = report_dict['name_long'].upper()
-                keywords = ["FINANCIAL POSITION", "FINANCIAL CONDITION", "BALANCE SHEET", "STATEMENTS OF CONDITION",
+                keywords = ["FINANCIAL POSITION", "FINANCIAL CONDITION", "BALANCE SHEET", "OF CONDITION",
                             "ASSETS, LIABILITIES AND EQUITY"]
-                forbidden = ["PAR","THETICAL","DISCLOSURE", "LP CUBE","NOTE", "FIRSTENERGY SOLUTIONS CORP.","PHANTOM"]
+                forbidden = ["PAR","THETICAL","DISCLOSURE","NOTE"]
                 if any(keyword in name_long for keyword in keywords):
                     if not any(word in name_long for word in forbidden) and "STATEMENT" in name_long:
                         if url_check[ticker][type]<1:
                             print(report_dict['name_short']+': '+report_dict['url'])
+                            report_urls[ticker][type] = report_dict['url']
                             url_check[ticker][type]+=1
         elif type=='income':
             for report_dict in ticker_info[ticker]['reports']:
                 name_long = report_dict['name_long'].upper()
-                keywords = ["COMPREHENSIVE INCOME","OF INCOME","OF OPERATIONS","COMPREHENSIVE LOSS","CONSOLIDATED INCOME",
-                            "COMPREHENSIVE EARNINGS","STATEMENTS OF EARNINGS","CONSOLIDATED OPERATIONS"]
+                keywords = ["INCOME","OPERATIONS","LOSS","EARNINGS"]
                 forbidden = ["PAR","THETICAL","DISCLOSURE"]
                 if any(keyword in name_long for keyword in keywords):
                     if not any(word in name_long for word in forbidden) and "STATEMENT" in name_long:
                         if url_check[ticker][type]<1:
                             print(report_dict['name_short']+': '+report_dict['url'])
+                            report_urls[ticker][type] = report_dict['url']
                             url_check[ticker][type]+=1
         elif type=='cash flow':
             for report_dict in ticker_info[ticker]['reports']:
                 name_long = report_dict['name_long'].upper()
-                keywords = ["CASH FLOW","OF CASHFLOW"]
+                keywords = ["CASH FLOW","CASHFLOW"]
                 forbidden = ["PAR","THETICAL","DISCLOSURE","SCHEDULE","CONTINUED"]
                 if any(keyword in name_long for keyword in keywords):
                     if not any(word in name_long for word in forbidden) and "STATEMENT" in name_long:
                         if url_check[ticker][type]<1:
                             print(report_dict['name_short']+': '+report_dict['url'])
+                            report_urls[ticker][type] = report_dict['url']
                             url_check[ticker][type]+=1
         elif type=='equity':
             for report_dict in ticker_info[ticker]['reports']:
@@ -99,4 +105,4 @@ for ticker in url_check:
 if not error_found:
     print("No errors found!")
 
-save_obj(report_urls,"report_urls")
+save_obj(report_urls,f'{save_path}report_urls_{year}')

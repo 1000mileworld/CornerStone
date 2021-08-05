@@ -4,8 +4,10 @@ from os.path import isfile, join
 from bs4 import BeautifulSoup
 from utilities import save_obj
 
-year = 2015
-mypath = f"Data\Filing Summaries\{year}\\"
+year = 2016
+load_path = f"Data\Filing Summaries\{year}\\"
+save_path = "Data\Objects\\"
+
 #Symbols = [f.split('.')[0] for f in listdir(mypath) if isfile(join(mypath, f))]
 
 # docs = [
@@ -19,11 +21,11 @@ Symbols = []
 ticker_info = {} #base + docs URLs for each ticker
 
 print("Getting ticker symbols and base URLs...")
-for f in listdir(mypath):
-    if isfile(join(mypath,f)):
+for f in listdir(load_path):
+    if isfile(join(load_path,f)):
         if f.split('.')[1] == 'txt':
             ticker = f.split('.')[0].split('_')[0]
-            with open(mypath+f) as f_url:
+            with open(load_path+f) as f_url:
                 summary_url = f_url.read()
             ticker_info[ticker] = {}
             ticker_info[ticker]['base_url'] = summary_url
@@ -33,7 +35,7 @@ for f in listdir(mypath):
 for i,ticker in enumerate(Symbols):
     print(f'Retrieving report URLS for {i+1} of {len(Symbols)} ({ticker})')
     try:
-        with open(mypath+ticker+'.xml','rb') as f_xml:
+        with open(load_path+ticker+'.xml','rb') as f_xml:
             soup = BeautifulSoup(f_xml,'lxml')
     except OSError as e:
         print(f'No xml file found for {ticker}!')
@@ -60,5 +62,5 @@ for i,ticker in enumerate(Symbols):
         # print(report_dict['category'])
         # print(report_dict['position'])
 
-save_obj(ticker_info,'ticker_info')
+save_obj(ticker_info,f'{save_path}ticker_info_{year}')
 print('Report URLS retrieved and saved.')
