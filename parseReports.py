@@ -47,8 +47,8 @@ def parse_10k(s_data, save_path, type):
 #make array of files in directory for easier debugging
 files = listdir(load_path)
 
-files = files[809:]
-#files = ["ARTW_equity.html"]
+files = files[9813:]
+files = ["AB_income.html"]
 statements_data = []
 for i, file in enumerate(files):
     print(f'Parsing {i+1} of {len(files)} files: '+file)
@@ -92,7 +92,8 @@ for i, file in enumerate(files):
                         if len(reg_row)>0: # check it's not leftmost col (row "header")
                             s = float(s.split('%')[0])/100
                     reg_row.append(s)
-                s_data['data'].append(reg_row)
+                if reg_row: #do not append empty row
+                    s_data['data'].append(reg_row)
 
             
             # if it's a regular row and a section but not a table header
@@ -102,7 +103,11 @@ for i, file in enumerate(files):
                 
             # finally if it's not any of those it must be a header
             elif (len(row.find_all('th')) != 0):            
-                hed_row = [ele.text.strip() for ele in row.find_all('th')]
+                #hed_row = [ele.text.strip() for ele in row.find_all('th')]
+                hed_row = []
+                for ele in row.find_all('th'):
+                    if len(ele.find_all('sup'))==0: # avoid counting superscripts as a table header
+                        hed_row.append(ele.text.strip())
                 s_data['headers'].append(hed_row)
                 
             else:            
