@@ -16,7 +16,7 @@ income_headers = ['Revenue', 'Net Income']
 
 files = listdir(load_path)
 #files = files[35:36]
-pos = files.index('AB_income.csv')
+pos = files.index('ABC_income.csv')
 files = files[pos:pos+1]
 
 def parse_income(headers,ticker,df):
@@ -31,6 +31,8 @@ def parse_income(headers,ticker,df):
         multiplier = 1e3
     #elif 'THOUSANDS' in report_name and 'MILLIONS' in report_name:
     #    raise Exception(f'Both THOUSANDS and MILLIONS present: {report_name}')
+    elif not 'MILLIONS' in report_name and not 'THOUSANDS' in report_name:
+        pass
     else:
         raise Exception(f'Cannot determine multiplier: {report_name}')
 
@@ -39,11 +41,11 @@ def parse_income(headers,ticker,df):
         if header=="Revenue":
             keywords = ['NET SALES','REVENUE']
         elif header=="Net Income":
-            keywords = ['NET INCOME']
+            keywords = ['NET INCOME', 'NET EARNINGS', 'NET (LOSS) INCOME']
 
         found = False
         for label in labels:
-            if any(keyword in label.upper() for keyword in keywords):
+            if isinstance(label, str) and any(keyword in label.upper() for keyword in keywords):
                 val = df[df.columns[1]].tolist()[labels.index(label)] # find value corresponding to matched label
                 arr.append(val*multiplier)
                 found = True
@@ -59,13 +61,13 @@ for i, file in enumerate(files):
     print(f'Parsing {i+1} of {len(files)} files: '+file)
     if isfile(join(load_path,file)):
         ticker = file.split('.')[0].split('_')[0]
-        type = file.split('.')[0].split('_')[1]
+        file_type = file.split('.')[0].split('_')[1]
         df = pd.read_csv(load_path+file)
-        if type=='income':
+        if file_type=='income':
             income_arr.append(parse_income(income_headers,ticker,df))
 
 income_numpy = np.array(income_arr)
 income_df = pd.DataFrame(income_numpy,columns=['Ticker']+income_headers)
 
 display(income_df)
-income_df.to_csv(save_path+f'Fundamentals_{year}.csv',index=False)
+#income_df.to_csv(save_path+f'Fundamentals_{year}.csv',index=False)
