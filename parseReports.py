@@ -5,7 +5,7 @@ from os import listdir
 from os.path import isfile, join
 from IPython.display import display
 
-year = 2015
+year = 2020
 load_path = f"Data\Reports\{year}\\"
 save_path = f"Data\Reports Parsed\{year}\\"
 
@@ -47,8 +47,9 @@ def parse_10k(s_data, save_path, type):
 #make array of files in directory for easier debugging
 files = listdir(load_path)
 
-files = files[9813:]
-files = ["AB_income.html"]
+files = files[3543:]
+#files = ["CPSH_balance.html"]
+
 statements_data = []
 for i, file in enumerate(files):
     print(f'Parsing {i+1} of {len(files)} files: '+file)
@@ -88,9 +89,14 @@ for i, file in enumerate(files):
                         tag.replaceWith('')
                     
                     s = soup.text.strip()
-                    if '%' in s:
-                        if len(reg_row)>0: # check it's not leftmost col (row "header")
+                    if '%' in s and len(reg_row)>0:
+                        #if len(reg_row)>0: # check it's not leftmost col (row "header")
+                        if '(' in s:
+                            s = s.replace('(','-').replace(')','')
+                        try:
                             s = float(s.split('%')[0])/100
+                        except ValueError:
+                            print("Unable to convert value containing % to float.")
                     reg_row.append(s)
                 if reg_row: #do not append empty row
                     s_data['data'].append(reg_row)
