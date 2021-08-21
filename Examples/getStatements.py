@@ -1,14 +1,18 @@
 import finpie
 from os import listdir
 from os.path import isfile, join
+import time
+import numpy as np
 
 year = 2020
 
 load_path = f"..\Data\Prices\{year}\\"
 save_path = f"Data\\"
 
-Symbols = [f.split('.')[0] for f in listdir(load_path) if isfile(join(load_path, f))]
-Symbols = Symbols[4046:4500]
+Symbols = np.loadtxt("YF Tickers Filtered.txt",dtype='str')
+
+#Symbols = [f.split('.')[0] for f in listdir(load_path) if isfile(join(load_path, f))]
+#Symbols = Symbols[4063:4500]
 #Symbols = ["OTRK"]
 
 def getData(ticker,s_type,save_path):
@@ -50,12 +54,13 @@ for i,ticker in enumerate(Symbols):
         result2 = getData(ticker,"income",save_path)
         counter = 0
         while result2==3: #if value error, give several retries
-            print(f'Retrying {counter+1}')
             counter+=1
-            if counter>5:
+            if counter>2:
                 print("Max retries reached, unable to download.")
                 break
             else:
+                time.sleep(5)
+                print(f'Retrying ({counter})')
                 getData(ticker,"income",save_path)
     
     # fd = finpie.Fundamentals(ticker, source = 'macrotrends', freq = 'A')
