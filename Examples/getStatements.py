@@ -34,9 +34,7 @@ def getData(ticker,s_type,save_path):
     
     df.to_csv(save_path+f'{s_type.capitalize()}\{ticker}_{s_type}.csv')
     return 1
-
-#def checkData(ticker,result):
-    
+  
 valErrors = 0
 for i,ticker in enumerate(Symbols):
     print(f'Getting data for {i+1} of {len(Symbols)} ({ticker}):')
@@ -50,7 +48,7 @@ for i,ticker in enumerate(Symbols):
     else:
         valErrors = 0
 
-    if result1==1: #first retrival succeeded
+    if result1==1: #first retrieval succeeded
         result2 = getData(ticker,"income",save_path)
         counter = 0
         while result2==3: #if value error, give several retries
@@ -63,22 +61,4 @@ for i,ticker in enumerate(Symbols):
                 print(f'Retrying ({counter})')
                 getData(ticker,"income",save_path)
     
-    # fd = finpie.Fundamentals(ticker, source = 'macrotrends', freq = 'A')
-    
-    # print("Downloading cashflow statement...")
-    # try:
-    #     df1 = fd.cashflow_statement()
-    #     df1.to_csv(save_path+f'Cashflow\{ticker}_cashflow.csv')
-    # except:
-    #     print("No data found!")
-    #     continue
-
-    # print("Downloading income statement....")
-    # try:
-    #     df2 = fd.income_statement()
-    #     df2.to_csv(save_path+f'Income\{ticker}_income.csv')
-    # except:
-    #     print("No data found!")
-    #     continue
-
 print("Done!")
