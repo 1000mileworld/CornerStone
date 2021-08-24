@@ -1,25 +1,30 @@
 import finpie
 import numpy as np
 import urllib.request
+import time
+from datetime import date
+import os
 
-year = 2020
 copy = 1
-startPos = 0
-stopPos = 1000
-new = 1 #set to zero for all subsequent runs
 max_errors = 15 #how many errors in a row before program thinks it's a connection problem
 
 text_path = f"Texts\\"
 save_path = f"Data\\"
 invalid = np.loadtxt(text_path+"No Download.txt",dtype='str')
-posFile = f"Ticker Position {copy}.txt" #keeps track of the Symbol index for the current ticker whose data is being downloaded
+pos_file = f"Ticker Position {copy}.txt" #keeps track of the Symbol index for the current ticker whose data is being downloaded
+log_file = f"Log {copy}.txt"
+
+today = date.today()
+t = time.localtime()
+current_time = time.strftime("%H:%M:%S", t)
+with open(text_path+log_file,'a') as f:    
+    f.write(f"{today} {current_time} local time: script started\n")
+
+with open(text_path+pos_file,'r') as f:
+    startPos = int(f.readline().strip())
+stopPos = startPos+1000
 
 Symbols = np.loadtxt(text_path+"YF Tickers Filtered.txt",dtype='str')
-
-if not new:
-    with open(text_path+posFile,'r') as f:
-        startPos = int(f.readline().strip())
-
 Symbols = Symbols[startPos:stopPos]
 
 def getData(ticker,s_type,save_path,copy):
@@ -51,19 +56,31 @@ def connect(host='http://google.com'):
 
 valErrors = 0
 for i,ticker in enumerate(Symbols):
-    print(f'Getting data for {i+1} of {len(Symbols)} ({ticker}):')
-    with open(text_path+posFile,'w') as f:
+    print(f'Getting data for {i+1} of {len(Symbols)} ({ticker})')
+    with open(text_path+pos_file,'w') as f:
         f.write(str(startPos+i))
 
     if not ticker in invalid:
         result1 = getData(ticker,"cashflow",save_path,copy)
         if result1==3:
             valErrors+=1
-            if valErrors>=max_errors:
-                with open(text_path+posFile,'w') as f:
-                    f.write(str(startPos+i+1-max_errors)) #max_errors start counting at 1 while startPos is zero indexed
-                print("Too many tickers unable to be imported to pandas, check your internet connection!")
-                exit()
+            if valErrors>=max_errors:                
+                print("Too many tickers unable to be imported to pandas, checking internet connection...")
+                if not connect():
+                    with open(text_path+pos_file,'w') as f:
+                        f.write(str(startPos+i+1-max_errors)) #max_errors start counting at 1 while startPos is zero indexed
+                    
+                    print("System restarting in 10 seconds...")
+                    today = date.today()
+                    t = time.localtime()
+                    current_time = time.strftime("%H:%M:%S", t)
+                    with open(text_path+log_file,'a') as f:    
+                        f.write(f"{today} {current_time} local time: PC restarted\n")
+                    os.system("shutdown /r /t 10")
+                else:
+                    print("Internet connection verified, increasing max errors allowed by 5.")
+                    max_errors+=5
+                #exit()
         else:
             valErrors = 0
 
