@@ -99,6 +99,7 @@ def download(copy,stopPos):
             print(f"Skipped {ticker} due to it being on the invalid tickers list.")
         
     print("Done!")
+    time_str = getTimeStr()
     writeLog(text_path+log_file,'a',f"{time_str} script finished\n")
 
 
