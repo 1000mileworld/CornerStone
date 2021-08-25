@@ -42,7 +42,7 @@ def getTimeStr():
     current_time = time.strftime("%H:%M:%S", t)
     return f"{today} {current_time} local time:"
 
-def download(copy):
+def download(copy,stopPos):
     max_errors = 15 #how many errors in a row before program thinks it's a connection problem
 
     text_path = f"Texts\\"
@@ -51,6 +51,8 @@ def download(copy):
     pos_file = f"Ticker Position {copy}.txt" #keeps track of the Symbol index for the current ticker whose data is being downloaded
     log_file = f"Log {copy}.txt"
 
+    print("Verifying internet connection...")
+    time.sleep(10)
     time_str = getTimeStr()
     if not connect():
         writeLog(text_path+log_file,'a',f"{time_str} script unable to start due to no internet connection\n")
@@ -59,7 +61,7 @@ def download(copy):
 
     with open(text_path+pos_file,'r') as f:
         startPos = int(f.readline().strip())
-    stopPos = copy*1000
+    #stopPos = copy*1000
 
     Symbols = np.loadtxt(text_path+"YF Tickers Filtered.txt",dtype='str').tolist()
     Symbols = Symbols[startPos:stopPos]
@@ -97,5 +99,6 @@ def download(copy):
             print(f"Skipped {ticker} due to it being on the invalid tickers list.")
         
     print("Done!")
+    writeLog(text_path+log_file,'a',f"{time_str} script finished\n")
 
 
