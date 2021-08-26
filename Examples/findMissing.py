@@ -48,19 +48,25 @@ for ticker in s_missing:
     if not ticker in exceptions:
         s_missing2.append(ticker)
 
-#s_missing2 = s_missing2[563:]
+#s_missing2 = s_missing2[385:]
 for i,ticker in enumerate(s_missing2):
     print(f'Checking ticker {i+1} of {len(s_missing2)} ({ticker})...')
     if not ticker in exceptions:
         url = base_url+ticker
-        response = get_url(url)
-        if response.history:
+        response = requests.get(url)
+        if response.history: #redirected
             # Request was redirected, status code 301
-            with open(outfile,'a+') as f:
-                f.write(f"{ticker}\n")
-            #print(response.url)
+            response2 = requests.get(response.url+"income-statement")
+            if not "var originalData = null;" in response2.text: #has data
+                with open(outfile,'a+') as f:
+                    f.write(f"{ticker}\n")
+            else:
+                with open(exceptionsFile,'a') as f:
+                    f.write(f"{ticker}\n")
         else:
             with open(exceptionsFile,'a') as f:
                 f.write(f"{ticker}\n")
+
+exceptions = np.loadtxt(exceptionsFile,dtype='str').tolist()
 exceptions.sort()
 saveArray(exceptions,exceptionsFile)
