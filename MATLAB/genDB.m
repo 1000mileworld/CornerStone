@@ -1,8 +1,9 @@
 %Generate database of stock parameters and save as csv
+clear
 fclose('all');
 warning('OFF', 'MATLAB:table:ModifiedAndSavedVarnames')
 
-analysisYear = 2020;
+analysisYear = 2018;
 headers = ["Ticker","LastSale","MarketCap","Sector","ReportDate",...
     "Revenue","NetIncome","NetIncomePrev"...
     "SharesOutstanding","CashFlow","ShareholderYield",...
@@ -14,20 +15,28 @@ dir_price = "../Data/Prices/"+num2str(analysisYear)+"/";
 dir_cashflow = "../Finpie method/Data/Cashflow/";
 dir_income = "../Finpie method/Data/Income/";
 %% Getting tickers
-% disp("Getting company tickers from available price and fundamental data...")
-% 
-% dirData = "../Finpie method/Data/Income/";
-% myFiles = dir(fullfile(dirData,'*.csv'));
-% 
-% n = length(myFiles);
-% Symbols = strings(length(myFiles),1);
-% f = waitbar(0, 'Starting...');
-% for i=1:n
-%     nameCell = strsplit(myFiles(i).name,'_');
-%     Symbols(i) = convertCharsToStrings(nameCell{1});
-%     waitbar(i/n, f, sprintf('Progress: %d %%', floor(i/n*100)));
-% end
-% close(f)
+disp("Getting company tickers from available price and fundamental data...")
+
+dirData = "../Finpie method/Data/Income/";
+myFiles = dir(fullfile(dirData,'*.csv'));
+
+n = length(myFiles);
+Symbols = strings(length(myFiles),1);
+%f = waitbar(0, 'Starting...');
+for i=1:n
+    nameCell = strsplit(myFiles(i).name,'_');
+    Symbols(i) = convertCharsToStrings(nameCell{1});
+    %waitbar(i/n, f, sprintf('Progress: %d %%', floor(i/n*100)));
+end
+%close(f)
+
+disp("Checking available price data for tickers...")
+priceFiles = dir(fullfile(dir_price,'*.csv'));
+Symbols_price = strings(length(priceFiles),1);
+for i=1:length(priceFiles)
+    nameCell = strsplit(priceFiles(i).name,'.');
+    Symbols_price(i) = convertCharsToStrings(nameCell{1});
+end
 
 %% Get data for each ticker
 headers_cell = cell(1,length(headers));
@@ -39,9 +48,16 @@ end
 db = cell(length(Symbols),length(headers));
 T_nasdaq = readtable(file_nasdaq);
 
+fprintf("Processing data for %d Symbols...\n",length(Symbols))
+f = waitbar(0, 'Starting...');
 for i=1:length(Symbols)
-    fprintf("Processing data for %d of %d Symbols (%s)\n",i,length(Symbols),Symbols(i));
+    %fprintf("Processing data for %d of %d Symbols (%s)\n",i,length(Symbols),Symbols(i));
     ticker = Symbols(i);
+    if ~ismember(ticker,Symbols_price)
+       continue
+    else
+       T_price = readtable(dir_price+ticker+".csv");
+    end
     
     %Ticker
     db{i,find(headers=="Ticker")} = ticker; %#ok<*FNDSB>
@@ -87,11 +103,11 @@ for i=1:length(Symbols)
             db{i,find(headers=="SharesOutstanding")} = max(T_income.shares_outstanding(idx_income));
         end
     catch
-        warning('No income statement found, assigning NANs to parameters.');
-        db{i,find(headers=="Revenue")} = nan;
-        db{i,find(headers=="NetIncome")} = nan;
-        db{i,find(headers=="NetIncomePrev")} = nan;
-        db{i,find(headers=="SharesOutstanding")} = nan;
+        warning('Unable to calculate a parameter from the income statement.');
+%         db{i,find(headers=="Revenue")} = nan;
+%         db{i,find(headers=="NetIncome")} = nan;
+%         db{i,find(headers=="NetIncomePrev")} = nan;
+%         db{i,find(headers=="SharesOutstanding")} = nan;
     end
     
     %Process cash flow statement
@@ -124,16 +140,19 @@ for i=1:length(Symbols)
             end
         end
     catch
-        warning('No cash flow statement found, assigning NANs to parameters.');
-        db{i,find(headers=="CashFlow")} = nan;
-        db{i,find(headers=="ShareholderYield")} = nan;
+        warning('Unable to calculate a parameter from the cashflow statement.');
+%         db{i,find(headers=="CashFlow")} = nan;
+%         db{i,find(headers=="ShareholderYield")} = nan;
     end
     
     %Process yf ticker price file
-    db{i,find(headers=="ThreeMonthPriceAppreciation")} = calcPrice(ticker,90,dir_price);
-    db{i,find(headers=="SixMonthPriceAppreciation")} = calcPrice(ticker,180,dir_price);
-    db{i,find(headers=="TwelveMonthPriceAppreciation")} = calcPrice(ticker,365,dir_price);
+    db{i,find(headers=="ThreeMonthPriceAppreciation")} = calcPrice(T_price,90);
+    db{i,find(headers=="SixMonthPriceAppreciation")} = calcPrice(T_price,180);
+    db{i,find(headers=="TwelveMonthPriceAppreciation")} = calcPrice(T_price,365);
+    
+    waitbar(i/length(Symbols), f, sprintf('Progress: %d %%', floor(i/length(Symbols)*100)));
 end
+close(f)
 
 disp("Done!")
 
@@ -141,8 +160,7 @@ T = cell2table(db,'VariableNames',headers_cell);
 writetable(T,saveFile)
 fclose(fid);
 
-function [avgDelta] = calcPrice(ticker,period,sourceDir)
-    T_price = readtable(sourceDir+ticker+".csv");
+function [avgDelta] = calcPrice(T_price,period)
     [numDays,~] = size(T_price);
 
     if 0<period && period<numDays
@@ -155,4 +173,3 @@ function [avgDelta] = calcPrice(ticker,period,sourceDir)
         avgDelta = (T_price.AdjClose(end)-T_price.AdjClose(1))/T_price.AdjClose(1);
     end
 end
-
