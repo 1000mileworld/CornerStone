@@ -5,12 +5,13 @@ warning('OFF', 'MATLAB:table:ModifiedAndSavedVarnames')
 
 acct.funds = 10000; %starting capital
 numStocks = 25; %for each growth and val
-year_range = [2015,2020];
+year_range = [2015,2020]; %years used for backtest (starting with last day of that year)
 split = [0.5,0.5]; %[%growth, %value] - percent of capital for each strategy
-%tax = 0.15; %account for long term capital gains tax
 headers = ["Ticker","Quantity","CurrentPrice","TotalValue"];
+file_bench = "VOO.csv";
 
-xData = linspace(year_range(1),year_range(2),year_range(2)-year_range(1)+1);
+xData = linspace(year_range(1)+1,year_range(2)+1,year_range(2)-year_range(1)+1);
+[x_bench,y_bench] = getBench(year_range,file_bench,acct.funds);
 
 disp('-----Simulating growth stocks-----')
 [balance1] = runSim(split(1)*acct.funds,numStocks,year_range,headers,"growth");
@@ -20,17 +21,25 @@ disp('-----Simulating value stocks-----')
 
 totalBalance = balance1+balance2;
 
-plot(xData,balance1,'b-*')
+plot(x_bench,y_bench,'g')
 hold on
+plot(xData,balance1,'b-*')
 plot(xData,balance2,'r-*')
 plot(xData,totalBalance,'k-s')
 
+curtick = get(gca, 'xTick');
+xticks(unique(round(curtick)));
+
 xlabel("Year","FontSize",16)
 ylabel("Portolio ($)","FontSize",16)
-legend("Growth","Value","Total","Location","best")
+legend("Benchmark","Growth","Value","Total","Location","best")
 
 R_avg = (totalBalance(end)/totalBalance(1))^(1/(year_range(2)-year_range(1)))-1;
-fprintf("Strategy returned an average of %.2f%% during the period %d-%d.\n",R_avg*100,year_range(1),year_range(2));
+fprintf("Strategy returned an average of %.2f%% per year during the period %d-%d.\n",...
+    R_avg*100,year_range(1),year_range(2));
+
+R_bench = (y_bench(end)/y_bench(1))^(1/(year_range(2)-year_range(1)))-1;
+fprintf("Benchmark returned an average of %.2f%% during the same period.\n",R_bench*100);
 
 function [balance] = runSim(capital,numStocks,year_range,headers,type)
     acct.balance = 0; %value of purchased stocks
@@ -122,5 +131,23 @@ function [price] = getPrice(dir_price,stock)
     catch
         warning("No price data found for %s, setting price to 0.",stock)
         price = 0;
+    end
+end
+
+function [xData,yData] = getBench(year_range,file_bench,capital)
+    T_bench = readtable(file_bench);
+
+    selection1 = find(year(T_bench.Date)==year_range(1));
+    selection2 = find(year(T_bench.Date)==year_range(2));
+
+    if isempty(selection1) || isempty(selection2)
+        disp('Selected dates outside of range in benchmark file.')
+    else
+        startRow = selection1(end);
+        endRow = selection2(end);
+        shares = floor(capital/T_bench.AdjClose(startRow));
+        leftover = capital-T_bench.AdjClose(startRow)*shares;
+        yData = T_bench.AdjClose(startRow:endRow).*shares+leftover;
+        xData = linspace(year_range(1)+1,year_range(2)+1,length(yData));
     end
 end
