@@ -1,9 +1,13 @@
 import alpaca_trade_api as tradeapi
 import numpy as np
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 #paper api keys
-API_KEY = "PK790DLZRZT4YKVM4SHK"
-API_SECRET = "OTQ75hKD4fWOyjLfHvSb29f6i1YDPpwQRpHeDSwn"
+API_KEY = os.getenv('API_KEY')
+API_SECRET = os.getenv('API_SECRET')
 APCA_API_BASE_URL = "https://paper-api.alpaca.markets"
 
 load_path = "MATLAB\\"
