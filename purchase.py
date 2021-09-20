@@ -38,6 +38,17 @@ def simBuy(Symbols,funds,api):
         else:
             counter+=1
     
+    if any(v==0 for v in portfolio.values()):
+        diff = 0
+        for ticker in portfolio:
+            if portfolio[ticker]==0:
+                barset = api.get_barset(ticker, 'day', limit=1)
+                price = barset[ticker][0].c
+                diff+=price
+        diff = diff-capital
+        print(f"Not enough equity to purchase all stocks, need >${round(diff,2)} more in funding.")
+        quit()
+    
     return portfolio
 
 def sellAll(api):
@@ -46,7 +57,7 @@ def sellAll(api):
         api.submit_order(position.symbol,position.qty,'sell','market','day')
 
 def combinePort(port1,port2): #combine 2 portfolio strategies
-    portfolio = port1
+    portfolio = port1.copy() #lists are mutable, operate on copy
     for ticker in port2:
         if ticker in port1:
             portfolio[ticker]+=port2[ticker]
@@ -62,10 +73,15 @@ equity = float(account.equity)
 s_growth = np.loadtxt(load_path+"growth.txt",dtype='str').tolist()[:numStocks]
 s_val = np.loadtxt(load_path+"value.txt",dtype='str').tolist()[:numStocks]
 
+print("Simulating growth portfolio...")
 p_growth = simBuy(s_growth,splits[0]*equity,api)
+
+print("Simulating value portfolio...")
 p_val = simBuy(s_val,splits[1]*equity,api)
+
 p_goal = combinePort(p_growth,p_val) #portfolio should look like this when done
 
+print("Reblancing portfolio...")
 portfolio = api.list_positions()
 if len(portfolio)>0: #stocks already present
     p_current = []
@@ -88,3 +104,5 @@ if len(portfolio)>0: #stocks already present
 else: #first time running script, no positions open
     for ticker in p_goal:
         api.submit_order(ticker,p_goal[ticker],'buy','market','day')
+
+print("Done!")
